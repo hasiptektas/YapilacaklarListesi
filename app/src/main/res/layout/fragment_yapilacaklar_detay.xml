@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="yapilacaklarDetayToolbarBaslik" type="String" />
+        <variable name="yapilacaklarDetayFragment" type="com.example.yapilacaklarlistesibir.fragment.YapilacaklarDetayFragment" />
+        <variable name="yapilacaklarNesnesi" type="com.example.yapilacaklarlistesibir.entity.Yapilacaklar" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/renk_1"
+        tools:context=".fragment.YapilacaklarDetayFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextYapilacakIs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/renk_3"
+                android:textColor="@color/black"
+                android:fontFamily="monospace"
+                android:hint="Yapılacak İş"
+                android:text="@{yapilacaklarNesnesi.yapilacak_is}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonGuncelle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="132dp"
+            android:fontFamily="monospace"
+            android:onClick="@{ () -> yapilacaklarDetayFragment.buttonGuncelleTikla(yapilacaklarNesnesi.yapilacak_id, editTextYapilacakIs.getText().toString(), textViewYapilacakTarih.getText().toString()) }"
+            android:text="Güncelle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarYapilacaklarGuncelle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/renk_2"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            android:fontFamily="monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{yapilacaklarDetayToolbarBaslik}" />
+
+        <TextView
+            android:id="@+id/textViewYapilacakTarih"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/renk_3"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Tarih Seçin"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="@{yapilacaklarNesnesi.yapilacak_tarih}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

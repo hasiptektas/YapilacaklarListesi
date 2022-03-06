@@ -1,7 +1,7 @@
 # YapilacaklarListesi
 MVVM
 
-   <img src="https://i.imgur.com/41TO4tz.png" height="550" width="300" / >                                                                  
+ <p>  <img src="https://i.imgur.com/41TO4tz.png" height="550" width="300" / > </p>                                                                  
                                                                                                 
 <div align = "center>
   <img src="https://i.imgur.com/sySH70O.png" height="550" width="300" />
